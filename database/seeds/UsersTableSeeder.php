@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
             'first_name' => 'Super',
             'last_name' => 'Admin',
             'email' => env('SUPER_ADMIN_EMAIL'),
-            'password' => bcrypt('TZ=8su7Z'),
+            'password' => bcrypt('secret'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
