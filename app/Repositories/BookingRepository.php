@@ -180,40 +180,4 @@ class BookingRepository extends Repository
 
         return $bookingCount;
     }
-
-    /**
-     * Get seo chart details based on different affiliate site ids
-     *
-     * @return mixed
-     */
-    public function seoChart()
-    {
-        $result = Booking::select(
-                DB::raw('COUNT(CASE WHEN afid IS NULL AND afguid IS NULL then 1 ELSE NULL END) as "organic_direct",
-                        COUNT(CASE WHEN afid IN (' . env('GOOGLE_ADS_SITE_ID') . ') then 1 ELSE NULL END) as "google_ads",
-                        COUNT(CASE WHEN afid IN (' . env('AFFILIATE_SITE_ID') . ') then 1 ELSE NULL END) as "affiliate",
-                        COUNT(CASE WHEN afid IN (' . env('THOMAS_COOK_SITE_ID') . ') then 1 ELSE NULL END) as "Thomas Cook",
-                        COUNT(CASE WHEN afid IS NOT NULL AND afguid IS NOT NULL AND afid NOT IN ('. env('GOOGLE_ADS_SITE_ID') . ',' .
-                        env('AFFILIATE_SITE_ID') . ',' . env('THOMAS_COOK_SITE_ID') . ') then 1 ELSE NULl END ) as "B2B"'
-                )
-            )->get()->first();
-
-        return $result;
-    }
-
-    /**
-     * Get website chart details based on different affiliate sites
-     *
-     * @return Collection
-     */
-    public function websiteChart(): Collection
-    {
-        $result = AffiliateBooking::join('affiliate_sites', 'affiliate_site_id', '=', 'affiliate_sites.id')
-            ->select(DB::raw('count(booking_id), affiliate_sites.name'))
-            ->whereNotNull('booking_id')
-            ->groupBy('affiliate_site_id', 'affiliate_sites.name')
-            ->get();
-
-        return $result;
-    }
 }

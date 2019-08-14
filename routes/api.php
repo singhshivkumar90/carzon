@@ -30,7 +30,6 @@ Route::prefix('v1')->group(function () {
             Route::get('user', 'UserController@loggedInUser')->name('logged-in-user');
             Route::group(['middleware' => ['validateAdmin']], function () {
                 Route::resource('users', 'UserController');
-                Route::get('chart-reports', 'ChannelPerformanceController@show')->name('chart-reports');
             });
             Route::get('bookings', 'BookingController@show')->name('bookings');
             Route::get('tickets', 'TicketController@show')->name('tickets');

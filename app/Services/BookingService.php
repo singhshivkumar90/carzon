@@ -14,11 +14,6 @@ class BookingService
     private $bookingRepository;
 
     /**
-     * Constant defined for websites
-     */
-    protected const WEBSITE = ['klook', 'MMT', 'TC'];
-
-    /**
      * BookingService constructor.
      *
      * @param BookingRepository $bookingRepository
@@ -56,37 +51,6 @@ class BookingService
         }
 
         return $count;
-    }
-
-    /**
-     * Get seo/website chart report
-     *
-     * @return mixed
-     */
-    public function getChartReport()
-    {
-        $seoChart = $this->bookingRepository->seoChart();
-        $websiteChart = $this->bookingRepository->websiteChart();
-
-        $restCount = 0;
-        $chartDetails = [];
-
-        foreach($websiteChart as $chart) {
-            if (!in_array($chart->name, self::WEBSITE)) {
-                $restCount += $chart->count;
-
-                continue;
-            }
-
-            $chartDetails[$chart->name] = $chart->count;
-        }
-
-        $chartDetails['Rest'] = $restCount;
-
-        return [
-            'seoChart' => $seoChart,
-            'websiteChart' => $chartDetails
-        ];
     }
 
     /**
