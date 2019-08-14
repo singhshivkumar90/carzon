@@ -1,0 +1,14 @@
+.btn {
+    &,
+    &:hover,
+    &:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+    & + & {
+        margin-left: ($grid-gutter-width / 3);
+    }
+}
+.spinner-border {
+    margin: auto;
+}
