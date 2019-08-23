@@ -13,9 +13,9 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <b-table
-                                        :items="users"
-                                        :fields="fields"
-                                        :busy="loading"
+                                    :items="users"
+                                    :fields="fields"
+                                    :busy="loading"
                                 >
                                     <div slot="table-busy" class="text-center text-warning my-2">
                                         <b-spinner class="align-middle" variant="warning"></b-spinner>
@@ -30,11 +30,11 @@
                                 </b-table>
                                 <template v-if="!loading">
                                     <b-pagination
-                                            align="center"
-                                            v-model="currentPage"
-                                            :total-rows="total"
-                                            :per-page="perPage"
-                                            aria-controls="my-table"
+                                        align="center"
+                                        v-model="currentPage"
+                                        :total-rows="total"
+                                        :per-page="perPage"
+                                        aria-controls="my-table"
                                     ></b-pagination>
                                 </template>
                             </div>
@@ -45,7 +45,9 @@
         </section>
     </div>
 </template>
+
 <script>
+
     import {mapState} from "vuex";
 
     export default {

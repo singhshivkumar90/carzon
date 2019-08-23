@@ -22,7 +22,7 @@ export const router = new Router({
             component: Anonymous,
             meta: {
                 requiresGuest: true,
-                title: 'Taxi2Airport'
+                title: 'Carzon'
             },
             children: [
                 {

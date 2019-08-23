@@ -12,7 +12,7 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 import VeeValidate from 'vee-validate';
 
-//import BootstrapVue from 'bootstrap-vue';
+import BootstrapVue from 'bootstrap-vue';
 import Toasted from 'vue-toasted';
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
@@ -21,7 +21,7 @@ import store from './store'
 import {Interceptor} from './_helpers';
 
 Vue.use(VueRouter);
-//Vue.use(BootstrapVue);
+Vue.use(BootstrapVue);
 Vue.use(VueSweetalert2);
 Vue.use(VeeValidate, {
     fieldsBagName: 'veeFields'
