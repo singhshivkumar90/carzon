@@ -12,7 +12,7 @@ trait Reports
      */
     public function today()
     {
-        $count = $this->model->whereDate('date_created', Carbon::today())->count();
+        $count = $this->model->whereDate('created_at', Carbon::today())->count();
 
         return $count;
     }
@@ -24,7 +24,7 @@ trait Reports
      */
     public function yesterday()
     {
-        $count = $this->model->whereDate('date_created', Carbon::yesterday())->count();
+        $count = $this->model->whereDate('created_at', Carbon::yesterday())->count();
 
         return $count;
     }
@@ -36,7 +36,7 @@ trait Reports
      */
     public function thisDayLastWeek()
     {
-        $count = $this->model->whereDate('date_created', Carbon::today()->sub(1, 'week'))->count();
+        $count = $this->model->whereDate('created_at', Carbon::today()->sub(1, 'week'))->count();
 
         return $count;
     }

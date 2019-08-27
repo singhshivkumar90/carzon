@@ -13,28 +13,6 @@
                         <div class="h4 text-center">Today</div>
                         <div class="h3 text-center text-info">{{todos.pendingToDoCount}}</div>
                     </div>
-                    <div class="col-6 text-center h6">
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item p-1">
-                                Avg Res. Time - Today
-                                <span class="d-block text-info">
-                                    {{(todos.averageResolutionTime).substring(0, 5)}}m
-                                </span>
-                            </li>
-                            <li class="list-group-item p-1">
-                                Avg Res. Time - 30 days
-                                <span class="d-block text-info">
-                                    {{todos.avgResolutionTimeLastThirtyDays.substring(0, 5)}}m
-                                </span>
-                            </li>
-                            <li class="list-group-item p-1">
-                                Weekly Target - %
-                                <span class="d-block text-info">
-                                    {{todos.weeklyTargetAchieved}}%
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

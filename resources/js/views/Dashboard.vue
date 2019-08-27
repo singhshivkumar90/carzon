@@ -24,7 +24,6 @@
     import DoughnutChart from "../components/DoughnutChart";
     import DashboardBooking from "../components/dashboard/DashboardBooking";
     import DashboardTarget from "../components/dashboard/DashboardTarget";
-    import DashboardPerformance from "../components/dashboard/DashboardPerformance";
     import DashboardTickets from "../components/dashboard/DashboardTickets";
     import DashboardTodo from "../components/dashboard/DashboardTodo";
 
@@ -33,7 +32,6 @@
         components: {
             DashboardTodo,
             DashboardTickets,
-            DashboardPerformance,
             DashboardTarget,
             DashboardBooking,
             DoughnutChart

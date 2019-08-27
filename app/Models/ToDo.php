@@ -6,13 +6,6 @@ namespace App\Models;
 class ToDo extends BaseModel
 {
     /**
-     * Added another database connection for getting reports data
-     *
-     * @var string
-     */
-    protected $connection = 'pgsql_2';
-
-    /**
      * Explicitly specifying table name
      *
      * @var string

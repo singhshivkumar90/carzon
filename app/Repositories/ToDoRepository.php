@@ -15,8 +15,8 @@ class ToDoRepository extends Repository
      */
     public function getPendingToDoCount()
     {
-        return  ToDo::whereDate('date_created', '=', Carbon::today())
-            ->where('date_completed', '=', null)
+        return  ToDo::whereDate('created_at', '=', Carbon::today())
+            ->where('completed_at', '=', null)
             ->count();
     }
 
@@ -27,9 +27,9 @@ class ToDoRepository extends Repository
      */
     public function getAverageResolutionTime()
     {
-        $averageTime = ToDo::SelectRaw('avg((date_completed) - (date_created))')
-            ->whereDate('date_created', today())
-            ->whereNotNull('date_completed')
+        $averageTime = ToDo::SelectRaw('avg((completed_at) - (created_at))')
+            ->whereDate('created_at', today())
+            ->whereNotNull('completed_at')
             ->get();
 
         return $averageTime->first()->avg;
@@ -42,9 +42,9 @@ class ToDoRepository extends Repository
      */
     public function getAverageResolutionTimePastThirtyDays()
     {
-        $averageTime = ToDo::SelectRaw('avg((date_completed) - (date_created))')
-            ->whereBetween('date_created', [Carbon::today()->subDay(30, 'day'), Carbon::now()])
-            ->whereNotNull('date_completed')
+        $averageTime = ToDo::SelectRaw('avg((completed_at) - (created_at))')
+            ->whereBetween('created_at', [Carbon::today()->subDay(30, 'day'), Carbon::now()])
+            ->whereNotNull('completed_at')
             ->get();
 
         return $averageTime->first()->avg;
@@ -57,11 +57,11 @@ class ToDoRepository extends Repository
      */
     public function getCountOfCurrentWeek()
     {
-        $toDoCount =  ToDo::WhereBetween('date_created', [
+        $toDoCount =  ToDo::WhereBetween('created_at', [
             Carbon::now()->startOfWeek(),
             Carbon::now()
         ])->where('is_completed', true)
-            ->where('date_completed', '<', Carbon::now())
+            ->where('completed_at', '<', Carbon::now())
             ->count();
 
         return $toDoCount;
