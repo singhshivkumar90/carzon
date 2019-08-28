@@ -1,14 +1,21 @@
 # carzon
 
+This is a dummy project which consists of user module and some reports related to cab booking services.
+
+# Important details
+
 APP_NAME=Carzon
 
 APP_ENV=local
-APP_KEY=base64:2g/tjkVDRqK11/qqIQKwdPSoLBLZCA75Jbza415tsdU=
-APP_DEBUG=true
+
+**Need to generate using `php artisan key:generate`**
+APP_KEY=
+
 APP_URL=http://localhost:8000
 
 LOG_CHANNEL=stack
 
+**This database connection consists user module information and booking information.**
 DB_CONNECTION=mysql
 DB_HOST=remotemysql.com
 DB_PORT=3306
@@ -16,36 +23,27 @@ DB_DATABASE=t5QtKKPwbw
 DB_USERNAME=t5QtKKPwbw
 DB_PASSWORD=aN2moxkLl2
 
-BROADCAST_DRIVER=log
-CACHE_DRIVER=file
-QUEUE_CONNECTION=sync
-SESSION_DRIVER=file
-SESSION_LIFETIME=120
+**Mail driver setup for sending mails to user**
 
-REDIS_HOST=127.0.0.1
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-
-MAIL_DRIVER=smtp
-MAIL_HOST=smtp.mailtrap.io
+MAIL_DRIVER=
+MAIL_HOST=
 MAIL_PORT=587
-MAIL_USERNAME=361512783f7804
-MAIL_PASSWORD=706bf86d3cfd39
+MAIL_USERNAME=
+MAIL_PASSWORD=
 MAIL_ENCRYPTION=
-MAIL_FROM_NAME=Carzon
-MAIL_FROM_ADDRESS=carzon@shiv.com
+MAIL_FROM_NAME=
+MAIL_FROM_ADDRESS=
 
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_DEFAULT_REGION=us-east-1
-AWS_BUCKET=
-
-PUSHER_APP_ID=
-PUSHER_APP_KEY=
-PUSHER_APP_SECRET=
-PUSHER_APP_CLUSTER=mt1
-
-MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
-MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+**Super admin email needs to be set.**
 
 SUPER_ADMIN_EMAIL=dashboard.super.carzon
+
+## Commands to be performed while doing fresh setup:-
+
+```bash
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+php artisan passport:install
+```
