@@ -49,6 +49,3 @@ MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 SUPER_ADMIN_EMAIL=dashboard.super.carzon
-
-# Model level caching
-MODEL_CACHE_STORE=file
