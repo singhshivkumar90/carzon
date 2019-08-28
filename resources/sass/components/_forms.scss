@@ -1,0 +1,10 @@
+.form-control {
+    &,
+    &.is-invalid {
+        &:hover,
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+}

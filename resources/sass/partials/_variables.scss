@@ -1,0 +1,29 @@
+// Font awesome path
+$fa-font-path:        "../../public/fonts/vendor/font-awesome" !default;
+$green: #6c6 !default;
+$primary: #FFCC33 !default;
+$body-bg: #F0F0F7 !default;
+$body-color: #333 !default;
+$navbar-light-color: $body-color !default;
+$navbar-brand-padding-y: 0 !default;
+$nav-link-padding-y: 0 !default;
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Montserrat", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$grid-gutter-width: 30px !default;
+// Header
+$profile-size: 40px;
+$logo-size: 35px;
+$navbar-brand-padding-y: ($grid-gutter-width / 3);
+
+// Sidebar
+$sidebar-width: 200px;
+
+// Link
+$link-color: $body-color !default;
+
+// Buttons
+$btn-border-radius: 0 !default;
+
+// Forms
+$input-color: $body-color !default;
+$input-border-color: #95989A !default;
+$input-border-radius: 0 !default;
