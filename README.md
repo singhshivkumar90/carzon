@@ -17,11 +17,11 @@ LOG_CHANNEL=stack
 
 **This database connection consists user module information and booking information.**
 DB_CONNECTION=mysql
-DB_HOST=remotemysql.com
+DB_HOST=
 DB_PORT=3306
-DB_DATABASE=t5QtKKPwbw
-DB_USERNAME=t5QtKKPwbw
-DB_PASSWORD=aN2moxkLl2
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
 
 **Mail driver setup for sending mails to user**
 
