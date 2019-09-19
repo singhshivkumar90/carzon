@@ -25,7 +25,7 @@ class CreateUserRequest extends BaseApiRequest
         return [
             'first_name' => 'required|string|max:50',
             'last_name' => 'required|string|max:50',
-            'email' => 'required|unique:users|email',
+            'email' => 'required|unique:users|email|is_valid_domain',
             'password' => 'required|min:6|max:10',
             'role' => 'required|integer|exists:roles,id'
         ];
