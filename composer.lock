@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "979c91f289d368351b770c15b730138e",
-    "content-hash": "a593e87d6158242c3c92f7de0441d1a8",
+    "hash": "7b6752eaa408b6d423cadd33e7057e27",
+    "content-hash": "a9ccffb33dc7fe702791627e544f03fc",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -2297,6 +2297,55 @@
                 "uuid"
             ],
             "time": "2018-07-19 23:38:55"
+        },
+        {
+            "name": "singhshivkumar90/contactform",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/singhshivkumar90/contact-form-package.git",
+                "reference": "7f074e22d90fa5a5dccae73af6278bda140dcf54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/singhshivkumar90/contact-form-package/zipball/7f074e22d90fa5a5dccae73af6278bda140dcf54",
+                "reference": "7f074e22d90fa5a5dccae73af6278bda140dcf54",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^5.7",
+                "illuminate/http": "^5.7",
+                "illuminate/support": "^5.7",
+                "php": "^7.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "singhshivkumar90\\contactform\\ContactFormServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "singhshivkumar90\\contactform\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shiv Kumar Singh",
+                    "email": "singhshivkumar90@gmail.com"
+                }
+            ],
+            "description": "contact form package development",
+            "keywords": [
+                "laravel"
+            ],
+            "time": "2019-09-19 06:42:47"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5668,7 +5717,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "singhshivkumar90/contactform": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
