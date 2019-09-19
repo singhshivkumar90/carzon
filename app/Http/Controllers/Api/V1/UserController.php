@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Facades\UserDetails;
 use App\Http\Request\CreateUserRequest;
 use App\Http\Request\UpdateUserRequest;
 use App\Http\Resources\UserResource;
@@ -38,11 +39,10 @@ class UserController extends BaseController
      */
     public function loggedInUser(): JsonResponse
     {
-        $loggedInUser = Auth::user();
-        $role = $loggedInUser->role()->first();
+        $userDetails = UserDetails::getLoggedInUserAndRole();
 
         return $this->sendResponse(
-            ['user' => $loggedInUser, 'role' => $role],Response::HTTP_OK, trans('user.success')
+            ['user' => $userDetails['user'], 'role' => $userDetails['role']],Response::HTTP_OK, trans('user.success')
         );
     }
 
